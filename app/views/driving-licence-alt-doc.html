@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Select an alternative identity document</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="{{baseURL}}/birth-certificate">
+				{{ formData|safe }}
+
+				<div class="intro">
+					<p>If you do not have access to your driving licence, you can still continue if you have access to one of the following documents:</p>
+				</div>
+
+				
+				<div class="form-group">
+                    <p><label><input type="radio" name="altDoc" value="birth-certificate">UK birth certificate</label></p>
+                    <p><label><input type="radio" name="altDoc" value="marriage-certificate">UK marriage certificate</label></p>
+                    <p><label><input type="radio" name="altDoc" value="none">I don't have any of these</label></p>
+				</div>
+
+				<div class="form-group">
+					<button class="button">Continue</button>
+<div class="save-and-return-button">
+<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+
+</div>				</div>
+				<div  class="secondry-button">
+					<a href="javascript:history.back()">Back to list of companies</a>
+				</div>
+				
+
+			</form>
+		</div>
+	</div>
+
+</main>
+{% endblock %}
+
+

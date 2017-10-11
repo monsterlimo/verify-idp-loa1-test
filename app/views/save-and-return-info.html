@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="">
+
+        <h1 class="heading-large">
+          Are you sure you want to sign out of your {{idp}} identity account?
+        </h1>
+
+        <div class="form-group">
+        <a href="{{verifyRoot}}/youve-been-signed-out{{formQuery}}" class="button">
+          Yes, return to GOV.UK
+        </a>
+        <a href="javascript:history.back()">No, continue with my verification</a>
+
+      </div>
+      </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+

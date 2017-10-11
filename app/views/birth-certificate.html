@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Birth certificate details</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="{{baseURL}}/bank-account">
+			
+				{{ formData|safe }}
+
+				<div class="intro">
+					<p>Please copy all these details exactly as they appear on your birth certificate.</p>
+				</div>
+
+				<div class="hints-feedback">
+			        <details class="font-small">
+			          <summary>
+			            <span class="summary">I don't have my birth certificate details with me</span>
+			          </summary>
+
+			          <div class="panel panel-border-narrow">
+			            <p>
+			              If you don't have access to the details on your birth certificate you can:
+			            </p>
+			            <ul class="list-bullet">
+			            	<li><a href="{{baseURL}}/save-and-return-info{{formQuery}}">save and return when you have your birth certificate</a> </li>
+			            	<!-- <li><a href="{{baseURL}}/passport{{formQuery}}">try using a different identity document or method</li> -->
+			            	<li><a href="{{verifyRoot}}/unable-to-verify{{formQuery}}">cancel and access the government service another way</a></li>
+			            </ul>
+			          </div>
+			        </details>
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Birth district</label>
+					<input class="form-control" style="width:14em" type="text" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Mothers maiden name</label>
+					<input class="form-control" style="width:14em" type="text" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Reference number</label>
+					<input class="form-control" style="width:14em" type="text" autocomplete="off">
+				</div>
+
+
+				<div class="form-group">
+					<button class="button">Continue</button>
+<div class="save-and-return-button">
+<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+
+</div>				</div>
+
+			</form>
+		</div>
+	</div>
+
+</main>
+{% endblock %}
+
+

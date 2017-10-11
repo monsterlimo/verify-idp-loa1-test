@@ -1,0 +1,72 @@
+{% extends "layout-eidas.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	
+	<a href="/" id="idp-logo" class="idp-logo">
+    <img src="/public/images/eidas-logos/{{country}}.png" style="max-width: 300px; max-height: 75px" alt="">
+  </a>
+	{% if country == "Germany" %}
+		<h1 class="heading-large">Log in mit Bürgerkarte</h1>
+	{% elif country == "Austria" %}
+		<h1 class="heading-large">Log in mit Bürgerkarte</h1>
+	{% elif country == "Belgium" %}
+		<h1 class="heading-large">BELGIUM</h1>
+	{% elif country == "Estonia" %}
+		<h1 class="heading-large">ESTONIA</h1>
+	{% endif %}
+	
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<div class="form-group">
+				<span class="error error-message hidden" id="error-message-full-name">Username or password not recognised</span>
+				<form id="main-form" action="{{verifyRoot}}/wait-for-match" method="get">
+					
+					{{ formData|safe }}
+					<div class="grid-row">
+					<div class="column-third button-container ">
+						<h3 class="sign-in-header">Log in mit ID-Karte</h3>
+						<img src="{{assetPath}}images/eidaseid.png" alt="">
+
+						<button class="button">
+							Karte
+						</button>
+					</div>	
+
+					<div class="column-third button-container">
+					
+						<h3 class="sign-in-header">Log in mit Handy</h3>
+						<img src="{{assetPath}}images/eidasmobile.png" alt="">
+					
+						<button class="button">
+							Handy
+						</button>
+					</div>
+					</div>
+				</form>
+			
+					<div  class="secondry-button">
+						<a href="javascript:history.back()">Geh zurück zu GOV.UK</a>
+					</div>
+			</div>
+
+
+		</div>
+		
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block pageScripts %}
+	
+	<!-- <script type="text/javascript" src="/public/javascripts/create-account.js"></script> -->
+	<script type="text/javascript" src="/public/javascripts/sign-in.js"></script>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Identity test{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+  <h1 class="heading-large">Identity test</h1>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="intro">
+        <p>
+          This information is from your credit record.
+        </p>
+        <p>
+          Your answers help verify you are <span id="full-name">Joe Bloggs</span>.
+        </p>
+      </div>
+
+      <form action="{{baseURL}}/identity-test-question-3">
+
+        {{ formData|safe }}
+
+        <div class="form-group set-wide-block-labels">
+          <fieldset>
+            <legend class="form-label-bold">2. When did you last take out a personal mortgage?</legend>
+            <label class="block-label" for="radio-1">
+              <input id="radio-1" type="radio" name="radio-group" value="HSBC">
+              Less than 1 years ago
+            </label>
+            <label class="block-label" for="radio-2">
+              <input id="radio-2" type="radio" name="radio-group" value="Post Office">
+              Between 1 and 3 years ago
+            </label>
+            <label class="block-label" for="radio-3">
+              <input id="radio-3" type="radio" name="radio-group" value="Tesco Bank">
+              Between 3 and 5 years ago
+            </label>
+            <label class="block-label" for="radio-4">
+              <input id="radio-4" type="radio" name="radio-group" value="Barclays">
+              More than 5 years ago
+            </label>
+            <label class="block-label" for="radio-5">
+              <input id="radio-5" type="radio" name="radio-group" value="never">
+              I have never had one
+            </label>
+          </fieldset>
+        </div>
+
+        <div class="form-group">
+          <button class="button">Continue</button>
+          <div class="save-and-return-button">
+            <!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+          </div>        
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+

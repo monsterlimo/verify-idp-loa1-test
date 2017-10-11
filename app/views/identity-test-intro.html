@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+	<h1 class="heading-large">Identity test</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+			<form action="{{baseURL}}/identity-test-question-1">
+
+				{{ formData|safe }}
+
+				<p>We’re going to ask you some questions that only you should know the answers to.</p>
+
+				<p>This is to make sure someone else isn’t pretending to be you by using your personal details{% if serviceLOA == 2 %} or a copy of your identity documents{% endif %}.</p>
+
+
+				<p>We get this information from your credit record. Everyone in the UK aged 18 and over has a credit record if they’ve had a credit account for longer than 6 months.</p>
+				<p>A credit record typically includes:</p>
+
+				<ul class="list-bullet">
+					<li>bank accounts, loans and credit cards</li>
+					<li>utility company accounts</li>
+					<li>whether you’re on the electoral register</li>
+				</ul>
+
+				<p>By taking the identity test, you grant {{idp}} temporary access to your credit record.</p>
+
+				<p>Your credit score won’t be affected. </p>
+
+				<div class="form-group">
+					
+					<button class="button">Take the identity test</button>
+
+					<div class="save-and-return-button">
+						<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</main>
+
+{% endblock %}
+
+

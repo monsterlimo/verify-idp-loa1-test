@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">What's your full name?</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/date-of-birth">
+
+				{{ formData|safe }}
+
+				<div class="inner-block">
+
+					<p>Please enter all parts of your name in full - don't use initials.</p>
+
+					<div class="form-group">
+
+						<label class="form-label">First name</label>
+						<input class="form-control" type="text" autocomplete="off" name="firstName">
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="form-label">Middle names</label>
+						<input class="form-control" type="text" autocomplete="off" name="middleName">
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="form-label">Last name</label>
+						<input class="form-control" type="text" autocomplete="off" name="lastName">
+
+					</div>
+
+
+					<div class="form-group">
+
+						<button class="button">Continue</button>
+						<div class="save-and-return-button">
+							<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+
+
+</main>
+{% endblock %}
+
+

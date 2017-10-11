@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Prove your identity</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/passport">
+
+				{{ formData|safe }}
+
+
+				<div class="intro">
+
+					<p>Select all the documents you have that are currently in date. We might not necessarily ask you to provide all of these details; just the ones that allow you to prove your identity in the most effective way.</p>
+				</div>
+
+				<div class="form-group validate">
+					<fieldset>
+						<legend class="form-label"><span style="font-weight: bold">Select all the identity documents you have</span> </br>(select at least two 	):</legend>
+						<label class="block-label">
+							<input type="checkbox" name="passport" value="true">
+							UK Passport
+						</label>
+						<label class="block-label">
+							<input type="checkbox" name="non_uk_passport" value="true">
+							National identity card
+						</label>
+						<label class="block-label">
+							<input type="checkbox" name="driving_licence" value="true">
+							UK photocard driving licence
+						</label>
+						<label class="block-label">
+							<input type="checkbox" name="bank_account" value="true">
+							UK bank account
+						</label>
+						<label class="block-label">
+							<input type="checkbox" name="credit_card" value="true">
+							Credit or debit card
+						</label>
+<!-- 						<label class="block-label">
+							<input type="checkbox" name="mobile_phone" value="true">
+							Mobile phone contract
+						</label> -->
+					</fieldset>
+
+					<span class="error-message hidden" id="error-message-full-name">Select at least two documents</span>
+
+				</div>
+					<a href="">I don't have any of these</a>
+
+					<div class="form-group">
+
+						<button class="button">Continue</button>
+						<div class="save-and-return-button">
+							<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+						</div>
+					</div>
+
+				</form>
+
+			</div>
+		</div>
+	</main>
+	{% endblock %}
+
+
+{% block pageScripts %}
+	
+	<!-- <script type="text/javascript" src="/public/javascripts/create-account.js"></script> -->
+	<script type="text/javascript" src="/public/javascripts/select-documents.js"></script>
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+
+    <div class="grid-row">
+	{% include "includes/certified-logo.html" %}
+      <div class="column-two-thirds">
+        
+
+          <h1 class="heading-large">
+            {{idp}} have been unable to verify your identity to the level required by the government service you are accessing
+          </h1>
+          
+	        <p>
+	          To protect you against fraud, we can't be specific as to why we're unable to verify your identity. The most common reasons are:
+	        </p>
+
+	        <ul class='list-bullet'>
+	          <li>the details you provided don't match the information held by the DVLA, HM Passports Office or credit agencies</li>
+	          <li>there isn't enough information about you on your credit record</li>
+	        </ul>
+
+	        <p>Your credit score has not been affected in any way during this process.</p>
+
+          <a href="{{verifyRoot}}/fail-uplift{{formQuery}}" class="button">
+            Continue to GOV.UK
+          </a>
+
+
+      </div>
+    </div>
+
+  </main>
+{% endblock %}
+
+

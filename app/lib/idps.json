@@ -1,0 +1,20 @@
+{
+
+	"barclays": 		"Barclays",
+	"citizensafe":	"Citizensafe",
+	"digidentity":	"Digidentity",
+	"experian":			"Experian",
+	"paypal":				"PayPal",
+	"post-office":	"Post Office",
+	"royal-mail": 	"Royal Mail",
+	"morpho":				"SecureIdentity",
+	"verizon":			"Verizon",
+	"idp":					"IDP",
+	"eidas":				"eIDAS",
+	"spain":				"España",
+	"austria":			"Bürgerkarte",
+	"germany": 			"Personalausweis",
+	"belgium": 			"beID",
+	"estonia": 			"ID-kaart"
+
+}

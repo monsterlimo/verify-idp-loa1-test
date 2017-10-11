@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<div class="grid-row group">
+
+		<div class="column-two-thirds">
+
+			<h1 class="heading-large">Verify your identity account</h1>
+
+			<p>
+				The service you are using needs you to verify your identity account.
+			</p>
+
+			<p>
+				<a href="{{baseURL}}/date-of-birth{{formQuery}}">Start verification</a>
+			</p>
+
+		</div>
+
+	</div>
+
+</main>
+{% endblock %}
+
+

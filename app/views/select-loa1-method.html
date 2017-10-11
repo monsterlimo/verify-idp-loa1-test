@@ -1,0 +1,128 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">How do you want to verify your identity?</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+
+
+
+
+				<div class="intro">
+
+					<p>There are a number of ways {{idpName}} can verify your identity, select which way you would prefer.</p>
+
+					<p>You may be required to complete more than one method.</p>
+
+				</div>
+
+				<form action="{{baseURL}}/identity-test-question-loa1{{formQuery}}&loa1route=true">
+				{{ formData|safe }}
+						
+	        <div class="form-group set-wide-block-labels">
+	          <fieldset>
+	            <legend class="form-label-bold">
+	            </legend>
+	            <label class="block-label" for="radio-1">
+	              <input id="radio-1" type="radio" name="loa1Method" value="kbv">
+	              <span class="radio-heading">Answer multiple choice questions</span>
+	              We’ll ask you up to 3 multiple choice questions based on your credit record that we have access to. This will not affect your credit score.
+	            </label>
+	            <label class="block-label" for="radio-2">
+	              <input id="radio-2" type="radio" name="loa1Method" value="bank">
+	              <span class="radio-heading">Get a payment reference from your bank statement</span>
+	              We'll send 1 penny to your bank account, and ask you to provide the reference number that shows up on your statement.
+	            </label>
+							{% if driving_licence === 'true' %}
+	            <label class="block-label" for="radio-3">
+	              <input id="radio-3" type="radio" name="loa1Method" value="driving_licence">
+	              <span class="radio-heading">Photograph your driving licence with our free smartphone app</span>
+	              You'll need to download our app and use your phone's camera to take a photo of your identity document and a selfie.
+	            </label>
+	            {% elif passport === 'true' %}
+	            <label class="block-label" for="radio-4">
+	              <input id="radio-4" type="radio" name="loa1Method" value="passport">
+	              <span class="radio-heading">Photograph your passport with our free smartphone app</span>
+	              You'll need to download our app and use your phone's camera to take a photo of your identity document and a selfie.
+	            </label>
+	            {% endif %}
+	          </fieldset>
+	        </div>
+
+        <div class="form-group">
+          <button class="button" type="submit">Continue</button>
+          <div class="save-and-return-button">
+            <!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+          </div>        
+        </div>
+
+				</form>
+
+
+
+
+
+<!-- 
+
+
+				<div>
+	      	<h2 class="heading-medium">Take an identity test</h2>
+	      	<p>We’ll ask you some questions that only you should know the answers to, based on information from your credit record.</p>
+		      <a class="button" href="{{baseURL}}/identity-test-question-loa1{{formQuery}}&loa1journey=true">
+		        Take an identity test
+		      </a>
+				</div>
+
+				{% if bank_account == 'true' %}
+				<div>
+	      	<h2 class="heading-medium">Get a payment reference</h2>
+	      	<p>We'll send 1 pence to your account, and ask you to provide the reference number that shows up on your statement.</p>
+		      <a class="button" href="{{baseURL}}/faster-payment-1{{formQuery}}&loa1route=true">
+		        Get a payment reference
+		      </a>
+				</div>
+				{% endif %}
+
+
+				{% if driving_licence === 'true' %}
+				<div>
+	      	<h2 class="heading-medium">Photograph your driving licence with a phone app</h2>
+	      	<p>You'll need to download a free app and use your phone's camera to photograph your ID.</p>
+		      <a class="button" href="{{baseURL}}/driving-licence{{formQuery}}&loa1route=true">
+		        Photograph your driving licence with a phone app
+		      </a>
+				</div>
+				{% elif passport === 'true' %}
+				<div>
+	      	<h2 class="heading-medium">Photograph your passport with a phone app</h2>
+	      	<p>You'll need to download a free app and use your phone's camera to photograph your ID.</p>
+		      <a class="button" href="{{baseURL}}/passport{{formQuery}}&loa1route=true">
+		        Photograph your passport with a phone app
+		      </a>
+				</div>
+				{% endif %}
+ -->
+				<!-- <div>
+	      	<h2 class="heading-medium">Check your mobile phone contract</h2>
+	      	<p>We'll use your mobile number to get your contract provider to send you a code. You will then have to provide us with that code.</p>
+		      <a class="button" href="{{baseURL}}/mobile-contract-1{{formQuery}}">
+		        Check your mobile phone contract
+		      </a>
+				</div> -->
+
+
+
+
+			</div>
+		</div>
+	</main>
+	{% endblock %}
+
+	

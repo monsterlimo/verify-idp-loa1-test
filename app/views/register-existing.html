@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Welcome back</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<p>We will now verify your identity so you can use government services.</p>
+
+			<p>
+				<a class="button" href="{{baseURL}}/passport{{formQuery}}">Start now</a>
+			</p>
+
+		</div>
+		
+	</div>
+
+</main>
+
+{% endblock %}
+
+

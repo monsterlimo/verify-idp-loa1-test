@@ -1,0 +1,36 @@
+
+{% extends "unbranded.html" %}
+
+{% block head %}
+
+  <link href='https://fonts.googleapis.com/css?family=Dosis:400,700' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link rel="stylesheet" href="/public/stylesheets/application.css">
+
+{% endblock %}
+
+{% block afterHeader %}
+<header role="banner" id="header">
+  <div class="inner">
+    <a href="/" id="idp-logo" class="idp-logo">
+      <img src="/public/images/logos/{{idpSlug}}.png" alt="">
+    </a>
+    <!-- <span style="float:right; font-size: 16px;">
+      <a href="#">Contact us</a>
+      <a class="back-to-gov" href="{{verifyRoot}}/{{formQuery}}">
+        Back to GOV.UK
+      </a>
+    </span> -->
+  </div>
+</header>
+{% endblock %}
+
+{% block bodyEnd %}
+
+  {% include "includes/scripts.html" %}
+
+  {% block pageScripts %}
+  {% endblock %}
+
+{% endblock %}
+

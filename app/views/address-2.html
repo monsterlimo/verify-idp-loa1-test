@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Address</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/select-documents">
+			
+				{{ formData|safe }}
+
+				<div class="inner-block">
+
+					<div class="form-group">
+
+						<label class="form-label">UK Postcode</label>
+						<p>
+							<strong>N1 1TY</strong> &nbsp; <a href="{{baseURL}}/address">Change</a>
+						</p>
+						
+					</div>
+
+					<div class="form-group">
+						
+						<label class="form-label">Select your address</label>
+                                                
+                        <p><label><input type="radio" name="address" value="Flat 1 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 1 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 2 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 2 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 3 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 3 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 4 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 4 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 5 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 5 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 6 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 6 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 7 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 7 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 8 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 8 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 9 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 9 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 10 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 10 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 11 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 11 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 12 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 12 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 13 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 13 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 14 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 14 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 15 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 15 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 16 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 16 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+                        <p><label><input type="radio" name="address" value="Flat 17 Waterloo Gardens, 1-4 Milner Square, Islington, London, Islington"> Flat 17 Waterloo Gardens, 1-4 Milner Square, Islington, London</label></p>
+
+						<p class="small" style="margin-top: 30px;font-size: 16px;">
+							<a href="{{baseURL}}/address-manual{{formQuery}}">I can't find my address in the list</a>
+						</p>
+
+					</div>
+
+
+					<div class="form-group">
+
+						<button class="button">Continue</button>
+						<div class="save-and-return-button">
+							<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+						</div>
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	
+
+</main>
+{% endblock %}
+
+

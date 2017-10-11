@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">UK bank account - step 1</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/faster-payment-2">
+			
+				{{ formData|safe }}
+
+				<div class="inner-block">
+
+					<p>We'll send 1 penny to your account, with a reference number that shows up on your statement.</p>
+					<p>On the next screen you can enter that reference number to verify your identity.</p>
+					<p>We won't use your account details for any other purpose.</p>
+
+					<div class="form-group">
+
+						<fieldset>
+
+							<div class="form-date">
+
+								<label class="form-label">Sort code</label>
+
+							  <div class="form-group form-group-day">
+							    
+							    <input type="text" autocomplete="off" class="form-control" name="sortcode-1">
+							    
+							  </div>
+							  <div class="form-group form-group-day">
+							    
+							    <input type="text" autocomplete="off" class="form-control" name="sortcode-2">
+							  </div>
+							  <div class="form-group form-group-day">
+							    
+							    <input type="text" autocomplete="off" class="form-control" name="sortcode-3">
+							  </div>
+							</div>
+
+						</fieldset>
+
+					</div>
+
+					<div class="form-group">
+
+						<label class="form-label">Account number</label>
+						<input class="form-control" type="text" autocomplete="off">
+						
+					</div>	
+
+					<div class="form-group">
+
+						<button class="button">Continue</button>
+						<div class="save-and-return-button">
+							<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+						</div>
+					</div>		
+
+				</div>
+
+			</form>
+
+		</div>
+
+
+	</div>	
+
+</main>
+{% endblock %}
+
+

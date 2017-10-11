@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Your {{idpName}} identity account</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<p>The government service you are accessing needs you to verify your identity to a higher level. To do this, we'll check if your personal details need updating, and then ask some some more questions about yourself.</p>
+<!-- 
+	    <ul class="list list-bullet">
+	    	{% if passport == "true" %}
+	      	<li>UK passport</li>
+	    	{% endif %}
+
+	    	{% if non_uk_passport == "true" %}
+	      	<li>Identity document from another country</li>
+	    	{% endif %}
+
+				{% if driving_licence == "true" %}
+	      	<li>UK photocard driving licence</li>
+	    	{% endif %}
+				
+				{% if bank_account == "true" %}
+	      	<li>UK bank account</li>
+	    	{% endif %}
+				
+				{% if credit_card == "true" %}
+	      	<li>debit or credit card</li>
+	    	{% endif %}
+				
+				{% if mobile_phone == "true" %}
+	      	<li>mobile phone</li>
+	    	{% endif %}
+				
+	    </ul>
+			<p><a href="#">I don't have all of these anymore</a></p> -->
+
+			<div class="panel panel-border-wide">
+				<p>You won’t need to do this every time you access a government service.</p>
+			</div>
+
+			<a href="{{baseURL}}/uplift-details-playback{{formQuery}}" class="button">
+        Continue
+      </a>
+			<div class="save-and-return-button">
+         <!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> --> 
+      </div>
+
+
+		</div>
+
+	</div>
+
+
+
+</main>
+{% endblock %}
+
+

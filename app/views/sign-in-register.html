@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	<!-- {% include "includes/certified-logo.html" %} -->
+
+
+	<div style="height: 8em;
+				margin: -30px -30px 0 -30px;
+				width:auto;
+				background:url(/public/images/tea.jpg);
+				background-size:cover;
+				background-position: 50% 80%"></div>
+
+	<div class="grid-row group">
+
+		<div class="column-two-thirds">
+
+			<h1 class="heading-large">GOV.UK Verify is the new way to access your self assessment.</h1>
+
+			<p>It gives safer, simpler and faster access to government services like filing your Self Assessment tax return or applying for Universal Credit.</p>
+
+			<h2 class="heading-medium">How GOV.UK Verify works</h2>
+			<p>It takes about 15 minutes to verify your identity the first time you use GOV.UK Verify. The next time you want to access a government service you can sign in with your username and password in less than 1 minute.</p>
+
+			<p>Post Office is one of 7 companies that have been certified by government to verify identities as they’ve met government security and privacy standards, so you can trust us with your personal information. </p>
+
+			<p>Post Office will ask you some questions, or perform other checks using photo identification and financial information before confirming your identity to the government department you’re trying to use, for example to HMRC if you’re doing your Self Assessment.</p>
+
+			<p>Using GOV.UK Verify is fast and simple because you can do it all online, without going to prove your identity in person, or waiting for something in the post.</p>
+
+			<h2 class="heading-medium">Verify your identity with Post Office</h2>
+
+			<p>To create your Post Office identity account, look for the GOV.UK Verify logo on the next page and click the link ‘sign in using GOV.UK Verify’.</p>
+
+			<div class="logo-wrap">
+				<div>
+					<img src="/public/images/govuk-verify-small-black-text.png" alt="Sign in using GOV.UK Verify">
+				</div>
+			</div>
+			</br>
+
+			{% if verify == 'false' %}
+			
+				<p>
+					<a class="button" href="{{verifyRoot}}/start-self-assessment?standalone=true&verify=false">
+						Start now
+					</a>
+				</p>
+
+			{% else %}
+				
+				<p>
+					<a class="button" href="{{verifyRoot}}/start-self-assessment?standalone=true&verify=true">
+						Start now
+					</a>
+				</p>
+
+			{% endif %}
+
+
+
+		</div>
+<!-- 
+		<div class="column-third">
+			
+			<div class="verify">
+				<div class="logo-wrap">
+					<div>
+						<img src="/public/images/logos/{{idpSlug}}.png">
+					</div>
+					<div>
+						<img src="/public/images/govuk-verify-small-black-text.png" alt="Sign in using GOV.UK Verify">
+					</div>
+				</div>
+				
+			<div class="form-group">
+
+			<p>Government has certified {{idpName}} to verify your identity.</p>
+
+			<p>To create your {{idpName}} identity account, look for  the GOV.UK Verify logo on the next page and click the link ‘sign in using GOV.UK Verify’.</p>
+			 -->
+
+
+				
+<!-- 			</div>
+				<p>If you have any problems, call <strong>0121&nbsp;496&nbsp;0234</strong>.</p>
+				<ul>
+				<li>your details are only used to make sure someone else isn’t pretending to be you</li>
+				<li>your data won’t be sold or shared for any other purposes without your consent</li>
+				<li>this site meets government security standards</li>
+				</ul>
+			</div>
+ -->
+		</div>
+
+	</div>
+
+</main>
+{% endblock %}
+

@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Identity test{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+  <h1 class="heading-large">Identity documents</h1>
+
+  <div class="grid-row">
+  
+    <div class="column-third">
+
+      <div class="intro">
+        <p><strong>Which document will you use to verify your identity?</strong></p>
+        <p class="documents-row">
+          <a href="{{baseURL}}/passport{{formQuery}}">UK passport</a>
+        </p>
+        <p class="documents-row">
+          <a href="{{baseURL}}/driving-licence{{formQuery}}">UK driving licence</a>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="column-third">
+
+<!--       <div style="border: 1px solid #aaa; padding: 0 10px; margin: 0 0 20px 0">
+
+        <h3>Progress</h3>
+
+        <p>- Personal details<br/>
+        - Address<br/>
+        - Security code<br/>
+        <strong>- Documents</strong><br/>
+        - Identity test</p>
+
+      </div>
+
+      <div style="border: 1px solid #aaa; padding: 0 10px; margin: 0 0 20px 0">
+    
+        <h3>Basic Identity Account</h3>
+        <p>We need your passport and driving licence details to verify your identity.</p>
+        <p>If you don't have both, you can continue to GOV.UK with a Basic Identity Account.</p>
+        <p><a href="{{baseURL}}/verified-loa1{{formQuery}}" class="button">Continue without documents</a></p>
+
+      </div>
+      
+    </div> -->
+
+  </div>
+
+</main>
+
+{% endblock %}
+
+

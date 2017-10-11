@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Account recovery</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/security-code">
+
+				{{ formData|safe }}
+
+				<div class="inner-block">
+
+					<p>If you forget your username or password, you'll need to recover your account.</p>
+
+					{{! <div class="form-group">
+
+						<label class="form-label" for="email">Email address</label>
+						<input class="form-control form-control-long" id="email" type="text" autocomplete="off">
+
+					</div> }}
+
+					<h2>Account recovery questions</h2>
+					<p>If you forget your sign-in details, you'll need to answer these recovery questions.</p>
+
+					<p>Please set up 2 questions and answers.</p>
+
+					<div class="form-group">
+					
+						<p>
+							<label for="" class="form-label">Question 1</label>
+							<select name="security1" id="">
+								<option value="">Choose a recovery question</option>
+								<option value="">What was the make of your first car?</option>
+								<option value="">What hospital were you born in?</option>
+								<option value="">What's the name of your first pet?</option>
+								<option value="">What's the name of your favourite teacher?</option>
+								<option value="">Where did you first go to school?</option>
+								<option value="custom">- Write your own question -</option>
+							</select>
+						</p>
+						<p class="optional optional-section-security1" data-toggle-value="custom">
+							<label for="" class="form-label" data-toggle-value="custom">Question</label>
+							<input type="text" class="form-control form-control-long" >
+						</p>
+						<p>
+							<label for="" class="form-label">Answer 1</label>
+							<input type="text" class="form-control form-control-long" >
+						</p>
+					</div>
+
+					<div class="form-group">
+					
+						<p>
+							<label for="" class="form-label">Question 2</label>
+							<select name="security2" id="">
+								<option value="">Choose a recovery question</option>
+								<option value="">What was the make of your first car?</option>
+								<option value="">What hospital were you born in?</option>
+								<option value="">What's the name of your first pet?</option>
+								<option value="">What's the name of your favourite teacher?</option>
+								<option value="">Where did you first go to school?</option>
+								<option value="custom">- Write your own question -</option>
+							</select>
+						</p>
+						<p class="optional optional-section-security2" data-toggle-value="custom">
+							<label for="" class="form-label" data-toggle-value="custom">Question</label>
+							<input type="text" class="form-control form-control-long" >
+						</p>
+						<p>
+							<label for="" class="form-label">Answer 2</label>
+							<input type="text" class="form-control form-control-long" >
+						</p>
+					</div>
+
+					<div class="form-group">
+
+						<button class="button">Continue</button>
+
+					</div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>
+
+	
+
+</main>
+{% endblock %}
+
+

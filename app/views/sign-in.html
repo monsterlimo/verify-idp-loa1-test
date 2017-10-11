@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Sign in</h1>
+
+	<div class="grid-row">
+		<div class="column-half">
+			<div class="form-group">
+				<span class="error error-message hidden" id="error-message-full-name">Username or password not recognised</span>
+				<form id="main-form" action="{{baseURL}}/security-code-2" method="get">
+					
+					{{ formData|safe }}
+			
+
+
+					<div class="form-group">
+						<label class="form-label" for="username">Username (this might be your email address)</label>
+						<input class="form-control" id="username" type="text" autocomplete="off">
+					</div>
+			
+					<div class="form-group">
+						<label class="form-label" for="password">Password</label>
+						<input class="form-control" id="password" type="password" autocomplete="off">
+					</div>
+
+					<p><a href="{{baseURL}}/create-account?userLOA=1&requestId={{requestId}}&idp={{idpSlug}}">Register now</a> if you already have a {{idpName}} identity account.</p>
+					<input type="hidden" name="action" value="sign-in">
+					<button class="button">
+						Continue
+					</button>
+					
+					<div  class="secondry-button">
+						<a href="javascript:history.back()">Back</a>
+					</div>
+				</form>
+			
+			</div>
+
+
+		</div>
+
+	</div>
+
+</main>
+
+{% endblock %}
+
+{% block pageScripts %}
+	
+	<!-- <script type="text/javascript" src="/public/javascripts/create-account.js"></script> -->
+
+<!-- VALIDATION AGAINST DUPLICATE ACCOUNTS -->
+	<!-- <script type="text/javascript" src="/public/javascripts/sign-in.js"></script> -->
+
+
+{% endblock %}
+
+

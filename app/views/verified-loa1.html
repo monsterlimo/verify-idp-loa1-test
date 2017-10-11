@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Identity test{% endblock %}
+
+{% block content %}
+  <main id="content" role="main">
+
+
+    <div class="grid-row">
+	{% include "includes/certified-logo.html" %}
+      <div class="column-two-thirds">
+
+        <h1 class="heading-large">
+          {{idp}} has verified your identity 
+        </h1>
+
+        <p>You can now sign in with your {{idp}} identity account whenever you see the GOV.UK Verify logo.</p>
+        
+        <p>We’ve sent you an email confirming you verified your identity with {{idp}}.</p>
+
+        <p>Continue to the government service you’re accessing.</p>
+
+        <a href="{{verifyRoot}}/verify-success{{formQuery}}&userLOA=2" class="button">
+          Continue to GOV.UK
+        </a>
+
+
+      </div>
+    </div>
+
+  </main>
+
+{% endblock %}
+
+

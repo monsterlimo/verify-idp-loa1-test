@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  <div class="grid-row">
+  {% include "includes/certified-logo.html" %}
+    <div class="column-two-thirds">
+      <h1 class="heading-large">
+        Experian have been unable to verify your identity {% if prereg == 'true' %}to the level required by the government service{% endif %}
+      </h1>
+    </div>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <form action="">
+
+        {{ formData | safe }}
+  
+       
+        <p>
+          To protect you against fraud, we can't be specific as to why this happened. The most common reasons are:
+        </p>
+
+        <ul class='list-bullet'>
+          <li>the details you provided don't match the information held by the DVLA, HM Passports Office or credit agencies</li>
+          <li>there isn't enough information about your credit file or financial history</li>
+        </ul>
+
+        <p>Your credit score has not been affected in any way during this process.</p>
+        
+        
+        {% if prereg == 'true' %}
+        <div class="panel panel-border-wide">
+          <div  style="max-width: 60%; float:left">
+            <p>You can still use your Experian identity account to access other governent services wherever you see the GOV.UK Verify logo. </p>
+          </div>
+        <img srcset="/public/images/govuk-verify-small-black-text.png 1x" alt="GOV.UK Verify" src="/public/images/govuk-verify.png" style="max-width: 40%; margin:15px 0px 30px 0px; float:right">
+          </p>
+        </div>
+        {% endif %}
+        
+
+        <p>
+          <a href="{{verifyRoot}}/fail{{formQuery}}" class="button">
+            Find out more on GOV.UK Verify
+          </a>
+        </p>
+
+      </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
+

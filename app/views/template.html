@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang=""><![endif]-->
+<!--[if gt IE 8]><!--><html lang=""><!--<![endif]-->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <title>{% block pageTitle %}IDP Journey{% endblock %}</title>
+
+    <script type="text/javascript">
+      (function(){if(navigator.userAgent.match(/IEMobile\/10\.0/)){var d=document,c="appendChild",a=d.createElement("style");a[c](d.createTextNode("@-ms-viewport{width:auto!important}"));d.getElementsByTagName("head")[0][c](a);}})();
+    </script>
+
+    <!--[if lt IE 9]>
+      <script src="{{assetPath}}javascripts/ie.js?0.9.1" type="text/javascript"></script>
+    <![endif]-->
+
+    <!-- <link rel="shortcut icon" href="{{assetPath}}images/favicon.ico?0.9.1" type="image/x-icon" /> -->
+
+    <!-- Size for iPad and iPad mini (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{assetPath}}images/apple-touch-icon-152x152.png?0.9.1">
+    <!-- Size for iPhone and iPod touch (high resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{assetPath}}images/apple-touch-icon-120x120.png?0.9.1">
+    <!-- Size for iPad 2 and iPad mini (standard resolution) -->
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="{{assetPath}}images/apple-touch-icon-76x76.png?0.9.1">
+    <!-- Default non-defined size, also used for Android 2.1+ devices -->
+    <link rel="apple-touch-icon-precomposed" href="{{assetPath}}images/apple-touch-icon-60x60.png?0.9.1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:image" content="{{assetPath}}images/opengraph-image.png?0.9.1">
+
+    {% block head %}{% endblock %}
+  </head>
+
+  <body class="{% block bodyClasses %}{% endblock %}">
+    <script type="text/javascript">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+    <div id="global-cookie-message">
+      <div class="outer-block">
+        <div class="inner-block">
+          {% block cookieMessage %}{% endblock %}
+        </div>
+      </div>
+    </div>
+    <!--end global-cookie-message-->
+
+    <header role="banner" id="header">
+      <div class="inner">
+        <a href="/" id="idp-logo" class="content">
+          <img src="{{assetPath}}images/logos/{{idpSlug}}.png" alt="">
+        </a>
+        <span style="float:right; font-size: 16px;">
+          <a href="#">Contact us</a>
+          <a style="display: inline-block; background:#005ea5; color: #fff; padding: 10px 14px; margin: 0 0 0 30px;" href="http://govuk-verify-test.herokuapp.com/view-driving-record/">Back to GOV.UK</a>
+        </span>
+      </div>
+    </header>
+    <!--end header-->
+
+    {% block afterHeader %}{% endblock %}
+
+    {% block content %}{% endblock %}
+
+    <footer id="footer" role="contentinfo">
+      <div class="inner" style="margin-top: 30px">
+
+<!--         <p>If you have any problems, contact {{idp}} support:</p>
+        <p>Phone: 01234 567890</p>
+        <p>Email: support@{{idpSlug}}.com</p> -->
+
+      </div>
+    </footer>
+    <!--end footer-->
+
+    <script src="{{assetPath}}javascripts/govuk-template.js?0.9.1" type="text/javascript"></script>
+
+    {% block bodyEnd %}{% endblock %}
+  </body>
+</html>

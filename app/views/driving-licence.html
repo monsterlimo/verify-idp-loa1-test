@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Driving licence details</h1>
+
+	<div class="grid-row">
+		<div class="column-two-thirds">
+	
+
+
+
+
+			<form action="{{baseURL}}/passport-non-uk">
+			
+				{{ formData|safe }}
+
+
+				
+				<div class="intro">
+					<p>Please copy all these details exactly as they appear on your photocard driving licence.</p>
+				</div>
+
+
+				<div class="hints-feedback">
+			        <details class="font-small">
+			          <summary>
+			            <span class="summary">I don't have my driving licence details with me</span>
+			          </summary>
+
+			          <div class="panel panel-border-narrow">
+			            <p>
+			              If you don't have access to the details on your driving licence you can:
+			            </p>
+			            <ul class="list-bullet">
+			            	<li><a href="{{baseURL}}/save-and-return-info{{formQuery}}">save and return when you have your driving licence</a> </li>
+			            	<!-- <li><a href="{{baseURL}}/driving-licence-alt-doc{{formQuery}}">try using a different identity document or method</li> -->
+			            	<li><a href="{{verifyRoot}}/other-ways-to-apply{{formQuery}}">cancel and access the government service another way</a></li>
+			            </ul>
+			          </div>
+			        </details>
+				</div>
+
+				<span class="error error-message hidden" id="error-message-full-name">Please enter a valid driving licence</span>
+
+				<div class="form-group">
+					<label class="form-label">Item 4a on your licence</label>
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+					-&nbsp;
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+					-&nbsp;
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Item 4b on your licence</label>
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+					-&nbsp;
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+					-&nbsp;
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<label class="form-label">Item 5 on your licence</label>
+					<input class="form-control" style="width:14em" type="text" autocomplete="off" maxlength="16" name=>
+					<input class="form-control form-control-xsmall" type="text" autocomplete="off">
+				</div>
+
+				<div class="form-group">
+					<input type="hidden" name="licence_done" value="true">
+					<button id="drivingLicenceButton" class="button">Continue</button>
+					<div class="save-and-return-button">
+						<!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> -->
+
+					</div>
+
+				</div>
+
+			</form>
+		</div>
+	</div>
+
+</main>
+{% endblock %}
+
+
+
+<script type="text/javascript">
+
+
+
+</script>

@@ -1,0 +1,100 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Your details</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<p>These are the details we currently hold on you.</p>
+
+			<h3 class="heading-small">Name</h3>
+			<!-- // SECURITY?!?!?! -->
+			<p>{{userInfo[0].firstName}} {{userInfo[0].middleName}} {{userInfo[0].lastName}} </p>
+
+			<h3 class="heading-small">Date of birth</h3>
+			<p>{{userInfo[0].dob}}</p>
+
+			<h3 class="heading-small">Address</h3>	
+			<ul>
+				<li>{{userInfo[0].address1}}</li>
+				<li>{{userInfo[0].address2}}</li>
+				<li>{{userInfo[0].town}}</li>
+				<li>{{userInfo[0].postcode}}</li>
+			</ul>
+
+			<p><a href="#">Edit details</a></p>
+
+<!-- 
+			<h3 class="heading-small">Date of birth</h3>
+			<p>1st January 1978</p>
+
+			<h3 class="heading-small">Address</h3>	
+			<ul>
+				<li>Flat 1 Waterloo Gardens</li>
+				<li>1-4 Milner Square</li>
+				<li>London</li>
+				<li>N1 3EZ</li>
+			</ul>
+
+			<p><a href="#">Edit details</a></p>
+
+ -->
+<!-- 
+	    <ul class="list list-bullet">
+	    	{% if passport == "true" %}
+	      	<li>UK passport</li>
+	    	{% endif %}
+
+	    	{% if non_uk_passport == "true" %}
+	      	<li>Identity document from another country</li>
+	    	{% endif %}
+
+				{% if driving_licence == "true" %}
+	      	<li>UK photocard driving licence</li>
+	    	{% endif %}
+				
+				{% if bank_account == "true" %}
+	      	<li>UK bank account</li>
+	    	{% endif %}
+				
+				{% if credit_card == "true" %}
+	      	<li>debit or credit card</li>
+	    	{% endif %}
+				
+				{% if mobile_phone == "true" %}
+	      	<li>mobile phone</li>
+	    	{% endif %}
+				
+	    </ul>
+			<p><a href="#">I don't have all of these anymore</a></p> -->
+<!-- 
+			<div class="panel panel-border-wide">
+				<p>You won’t need to do this every time you access a government service.</p>
+			</div> -->
+
+			<a href="{{baseURL}}/select-documents{{formQuery}}" class="button">
+        Continue
+      </a>
+			<div class="save-and-return-button">
+         <!-- or <a href="{{verifyRoot}}/save-and-continue{{formQuery}}">save and complete later</a> --> 
+      </div>
+
+
+		</div>
+
+	</div>
+
+
+
+</main>
+{% endblock %}
+
+

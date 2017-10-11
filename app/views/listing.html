@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+  <h1 class="heading-large">
+    IDP Prototype journey
+  </h1>
+
+  <ul class="list-bullet">
+    {{#files}}
+    <li><a href="{{baseURL}}/{{path}}">{{name}}</a></li>
+    {% endblock %}
+  </ul>
+
+</main>
+{% endblock %}
+
+

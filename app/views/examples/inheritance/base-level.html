@@ -1,0 +1,9 @@
+<html>
+    <head><title>{% block pageTitle %}{% endblock %}</title></head>
+    <body>
+        {% include "examples/inheritance/logo.html" %}
+        <p>Section: {% block section %}{% endblock %}</p>
+        <h1>{% block pageHeading %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </body>
+</html>
