@@ -193,19 +193,19 @@ module.exports = {
       res.render("sign-in-register", query);
     });
 
-    //app.post('/:idp/security-code', function(req, res){
+    app.post('/:idp/security-code', function(req, res){
 
-      // if (req.query.idp == "experian"){
+      if (req.query.idp == "experian"){
 
-      //   res.redirect('/' + req.params.idp + "/memorable-word" + res.locals.formQuery);
+        res.redirect('/' + req.params.idp + "/memorable-word" + res.locals.formQuery);
 
-      // } else {
+      } else {
 
      // notifyClient.sendSms("5c179906-df50-44c9-b42e-f71de4c26b50", req.body.mobileNumber);
-     // res.redirect('/' + req.params.idp + '/security-code-2?' + queryString.stringify(req.body));
-    // }
+     res.redirect('/' + req.params.idp + '/security-code-2?' + queryString.stringify(req.body));
+    }
 
-    // });
+    });
 
     // app.get('/:idp/security-code', function(req, res){
 
