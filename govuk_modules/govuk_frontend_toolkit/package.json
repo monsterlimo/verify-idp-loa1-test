@@ -10,22 +10,23 @@
         "spec": ">=5.0.0 <6.0.0",
         "type": "range"
       },
-      "/Users/michaelthomas/development/verify/idp-test-2"
+      "/Users/matt/Projects/HIPPO/verify-idp-loa1-test"
     ]
   ],
   "_from": "govuk_frontend_toolkit@>=5.0.0 <6.0.0",
-  "_id": "govuk_frontend_toolkit@5.0.2",
+  "_id": "govuk_frontend_toolkit@5.2.0",
   "_inCache": true,
   "_location": "/govuk_frontend_toolkit",
+  "_nodeVersion": "0.10.48",
   "_npmOperationalInternal": {
-    "host": "packages-18-east.internal.npmjs.com",
-    "tmp": "tmp/govuk_frontend_toolkit-5.0.2.tgz_1480433660697_0.3732329965569079"
+    "host": "packages-12-west.internal.npmjs.com",
+    "tmp": "tmp/govuk_frontend_toolkit-5.2.0.tgz_1490691065741_0.04473077203147113"
   },
   "_npmUser": {
     "name": "alphagov",
     "email": "govuk-dev@digital.cabinet-office.gov.uk"
   },
-  "_npmVersion": "1.4.28",
+  "_npmVersion": "2.15.1",
   "_phantomChildren": {},
   "_requested": {
     "raw": "govuk_frontend_toolkit@^5.0.0",
@@ -40,11 +41,11 @@
     "/",
     "/govuk-elements-sass"
   ],
-  "_resolved": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-5.0.2.tgz",
-  "_shasum": "72cc68e166f41b6cb0f6eee2bf9a4e82439f7857",
+  "_resolved": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-5.2.0.tgz",
+  "_shasum": "f5f6c5ae48e431ecb97d8b808b1e8db7782abc7f",
   "_shrinkwrap": null,
   "_spec": "govuk_frontend_toolkit@^5.0.0",
-  "_where": "/Users/michaelthomas/development/verify/idp-test-2",
+  "_where": "/Users/matt/Projects/HIPPO/verify-idp-loa1-test",
   "author": {
     "name": "Government Digital Service developers",
     "email": "govuk-dev@digital.cabinet-office.gov.uk"
@@ -57,11 +58,11 @@
   "devDependencies": {},
   "directories": {},
   "dist": {
-    "shasum": "72cc68e166f41b6cb0f6eee2bf9a4e82439f7857",
-    "tarball": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-5.0.2.tgz"
+    "shasum": "f5f6c5ae48e431ecb97d8b808b1e8db7782abc7f",
+    "tarball": "https://registry.npmjs.org/govuk_frontend_toolkit/-/govuk_frontend_toolkit-5.2.0.tgz"
   },
-  "gitHead": "4bc7b28eea1cce6a7850b09aeebd1c999a421867",
-  "homepage": "https://github.com/alphagov/govuk_frontend_toolkit_npm",
+  "gitHead": "463d7b077027435f4dc6f4b24cffaf296c135be3",
+  "homepage": "https://github.com/alphagov/govuk_frontend_toolkit_npm#readme",
   "license": "MIT",
   "maintainers": [
     {
@@ -77,5 +78,5 @@
     "url": "git://github.com/alphagov/govuk_frontend_toolkit_npm.git"
   },
   "scripts": {},
-  "version": "5.0.2"
+  "version": "5.2.0"
 }
