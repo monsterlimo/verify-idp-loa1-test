@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">Download the {{idp}} app</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/prove-identity-4" method="get">
+			
+				{{ formData|safe }}
+
+				<input type="hidden" name="action" value="register">
+
+				<div class="inner-block">
+
+            <ol class="list list-number">
+              <li><p>Download our free {{idp}} app on your smartphone or tablet for <a href="#">iOS</a>, <a href="#">Android</a> or <a href="#">Windows</a>.</p>
+
+                <img src="{{assetPath}}images/app-store-logos.jpg" height="45" width="400"/>
+
+                <p><a href="#">Get help installing the {{idp}} app.</a></p></li>
+
+              <li><p>Open the {{idp}} app on your device</p>
+
+                <!--<img src="{{assetPath}}images/selfie-on-mobile-phone.jpg" height="185" width="99"/></li>-->
+
+              <li><p>Scan the QR code</p>
+
+
+              <a href="{{baseURL}}/prove-identity-4"><img src="{{assetPath}}images/static_qr_code_without_logo.jpg" height="185" width="185"/></a></li>
+            </ol>
+
+
+					<div class="form-group">
+
+
+						<!--<button class="button">Continue</button>-->
+
+            <img src="{{assetPath}}images/ajax-loader.gif" height="55" width="54"/></div>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>	
+
+</main>
+{% endblock %}
+
+

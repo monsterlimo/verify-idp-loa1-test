@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}Index{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+	{% include "includes/certified-logo.html" %}
+
+
+	<h1 class="heading-large">We’ve received the scan of your identity document and selfie</h1>
+
+	<div class="grid-row">
+
+		<div class="column-two-thirds">
+
+			<form action="{{baseURL}}/verified" method="get">
+			
+				{{ formData|safe }}
+
+				<input type="hidden" name="action" value="register">
+
+				<div class="inner-block">
+
+            <p>Please wait while we check your identity document. This may take a while; please bear with us.</p>
+
+				</div>
+
+				<hr style="clear: both;">
+				<div class="inner-block">
+
+					<img src="{{assetPath}}images/tick.png" height="27" width="27" style="float: left"/>
+					<p>&nbsp;&nbsp;Document verification</p>
+
+				</div>
+				<hr style="clear: both;">
+				<div class="inner-block">
+					<img src="{{assetPath}}images/tick.png" height="27" width="27" style="float: left"/>
+					<p>&nbsp;&nbsp;Selfie check</p>
+
+				</div>
+
+				<div class="form-group">
+
+					<button class="button">Continue</button>
+
+				</div>
+
+			</form>
+
+		</div>
+
+	</div>	
+
+</main>
+{% endblock %}
+
+
