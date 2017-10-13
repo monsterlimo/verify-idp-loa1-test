@@ -217,15 +217,15 @@ module.exports = {
             console.log(res.locals.formQuery);
             console.dir(res)
             var choice = queryString.stringify(req.body).slice(queryString.stringify(req.body).length -1, queryString.stringify(req.body).length);
-                  if (choice == "0"){
-            
-                    res.redirect('/' + req.params.idp + "/prove-identity-2" + res.locals.formQuery);
-            
-                  } else {
-            
-                 
-                 res.redirect('/' + req.params.idp + '/prove-identity-offline');
-                }
+            if (choice == "1" || choice == "2"){
+              res.redirect('/' + req.params.idp + '/prove-identity-offline');
+              
+
+            } else {
+      
+              res.redirect('/' + req.params.idp + "/prove-identity-2" + res.locals.formQuery);
+          }
+      
             
     });
 
@@ -233,14 +233,13 @@ module.exports = {
       console.log(res.locals.formQuery);
       console.dir(res)
       var choice = queryString.stringify(req.body).slice(queryString.stringify(req.body).length -1, queryString.stringify(req.body).length);
-            if (choice == "0"){
-      
-              res.redirect('/' + req.params.idp + "/prove-identity-3" + res.locals.formQuery);
-      
+            if (choice == "1" || choice == "2"){
+              res.redirect('/' + req.params.idp + '/prove-identity-offline');
+              
+
             } else {
       
-           
-           res.redirect('/' + req.params.idp + '/prove-identity-offline');
+              res.redirect('/' + req.params.idp + "/prove-identity-3" + res.locals.formQuery);
           }
       
 });
