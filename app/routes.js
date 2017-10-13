@@ -175,6 +175,9 @@ module.exports = {
 
     });
 
+
+
+
     app.get('/', listing);
     app.get('/govuk', listing);
 
@@ -192,6 +195,56 @@ module.exports = {
 
       res.render("sign-in-register", query);
     });
+
+
+    app.post('/:idp/prove-identity-2', function(req, res){
+      console.log("redirectings now");
+            if (req.query.validDocs == "yes"){
+      
+              res.redirect('/' + req.params.idp + "/prove-identity-3" + res.locals.formQuery);
+      
+            } else {
+      
+           
+           res.redirect('/' + req.params.idp + '/offline?' + queryString.stringify(req.body));
+          }
+      
+          });
+
+
+    
+          app.post('/:idp/prove-identity-1', function(req, res){
+            console.log(res.locals.formQuery);
+            console.dir(res)
+            var choice = queryString.stringify(req.body).slice(queryString.stringify(req.body).length -1, queryString.stringify(req.body).length);
+                  if (choice == "0"){
+            
+                    res.redirect('/' + req.params.idp + "/prove-identity-2" + res.locals.formQuery);
+            
+                  } else {
+            
+                 
+                 res.redirect('/' + req.params.idp + '/prove-identity-offline');
+                }
+            
+    });
+
+    app.post('/:idp/prove-identity-2', function(req, res){
+      console.log(res.locals.formQuery);
+      console.dir(res)
+      var choice = queryString.stringify(req.body).slice(queryString.stringify(req.body).length -1, queryString.stringify(req.body).length);
+            if (choice == "0"){
+      
+              res.redirect('/' + req.params.idp + "/prove-identity-3" + res.locals.formQuery);
+      
+            } else {
+      
+           
+           res.redirect('/' + req.params.idp + '/prove-identity-offline');
+          }
+      
+});
+          
 
     app.post('/:idp/security-code', function(req, res){
 
