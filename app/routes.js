@@ -175,6 +175,9 @@ module.exports = {
 
     });
 
+
+
+
     app.get('/', listing);
     app.get('/govuk', listing);
 
@@ -192,6 +195,85 @@ module.exports = {
 
       res.render("sign-in-register", query);
     });
+
+/*
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+          sURLVariables = sPageURL.split('&'),
+          sParameterName,
+          i;
+  
+      for (i = 0; i < sURLVariables.length; i++) {
+          sParameterName = sURLVariables[i].split('=');
+  
+          if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+          }
+      }
+  };
+  */
+
+
+          app.post('/:idp/prove-identity-1', function(req, res){
+            console.log(res.locals.formQuery);
+            console.dir(res)
+
+            //var choice = this.getUrlParameter('validDocs');
+            //queryString
+            var vars = [], hash;
+            var query = queryString.stringify(req.body);
+            var hashes = query.slice(query.indexOf('?') + 1).split('&');
+            for(var i = 0; i < hashes.length; i++)
+            {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            //return vars;
+            var choice = vars["validDocs"];
+
+
+            if (choice == "yesbut" || choice == "no"){
+              res.redirect('/' + req.params.idp + '/prove-identity-offline?' + choice);
+              
+              
+            } else {
+              res.redirect('/' + req.params.idp + "/prove-identity-2?" + choice);
+              
+          }
+      
+            
+    });
+
+    app.post('/:idp/prove-identity-2', function(req, res){
+      console.log(res.locals.formQuery);
+      console.dir(res);
+
+      var vars = [], hash;
+      var query = queryString.stringify(req.body);
+      var hashes = query.slice(query.indexOf('?') + 1).split('&');
+      for(var i = 0; i < hashes.length; i++)
+      {
+          hash = hashes[i].split('=');
+          vars.push(hash[0]);
+          vars[hash[0]] = hash[1];
+      }
+      //return vars;
+      var choice = vars["validDocs"];
+
+
+      //var choice = queryString.stringify(req.body).slice(queryString.stringify(req.body).length -1, queryString.stringify(req.body).length);
+            if (choice == "yesbut" || choice == "no"){
+              res.redirect('/' + req.params.idp + '/prove-identity-offline?' + choice);
+              
+
+            } else {
+      
+              res.redirect('/' + req.params.idp + "/prove-identity-3?" + choice);
+          }
+      
+});
+          
 
     app.post('/:idp/security-code', function(req, res){
 
